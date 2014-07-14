@@ -1,9 +1,60 @@
 .container {
-  margin: 20px auto;
-  width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+    margin: 80px auto;
+    width: 800px;
+    padding: 0px 20px 20px 20px;
 }
+
+.welcome {
+  text-align: center;
+  font-family: cursive;
+}
+
 th {
   text-align: left;
+}
+
+table td {
+  border: 1px dotted gray;
+}
+
+.nav_container {
+  height: 50px;
+  background-color: green;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+nav h1 {
+  margin: 2px 0;
+  padding: 0;
+  float: left;
+  color: white;
+  font-family: cursive;
+  font-weight: lighter;
+}
+
+nav {
+  margin-left: 100px;
+  width: 80%;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+nav ul {
+  float: right;
+  list-style: none;
+}
+
+td {
+  padding-right: 20px;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 15px;
 }
