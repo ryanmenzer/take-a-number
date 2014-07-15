@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
+  <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
   -->
   <link rel="stylesheet" href="/css/normalize.css">
-  <!--
-    application.css is where you put your styles
-  -->
   <link rel="stylesheet" href="/css/application.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -18,6 +15,19 @@
   <title></title>
 </head>
 <body>
-  <%= yield %>
+  <div class="nav_container">
+    <nav>
+      <h1>Take a Number</h1>
+      <ul>
+        <li><a href="/">Profile</a></li>
+        <li><a href="/show_appeals">Appeals</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="container">
+    <%= yield %>
+  </div>
 </body>
 </html>
+
