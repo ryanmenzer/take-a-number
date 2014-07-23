@@ -1,7 +1,7 @@
 require 'bcrypt'
 
 class User < ActiveRecord::Base
-  has_many :appeals
+  has_many :appeals, dependent: :destroy
 
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true, format: { with: /.*@.*[.].*/, message: "Please format your email address like 'sample@email.com'"}
