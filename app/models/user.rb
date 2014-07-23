@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   validates :password_digest, presence: true
   validates :account_number, presence: true
   validate do |user|
-    AccountNumberValidator.new(user.account_number).check_account_number
+    AccountNumberValidator.new(user).check_account_number
   end
 
   include BCrypt
@@ -27,17 +27,18 @@ end
 
 class AccountNumberValidator
 
-  def initialize(digit_string)
-    raise ArgumentError.new("Need 7 digits") if digit_string.length != 7
-    @digit_string = digit_string
+  def initialize(user)
+    @user = user
   end
 
   def check_account_number
-    array = @digit_string.split("")
+    digit_string = @user.account_number
+    raise ArgumentError.new("Need 7 digits") if digit_string.length != 7
+    array = digit_string.split("")
     last_digit = array.pop.to_i
     array.map!.with_index{ |x, i| x.to_i * (i + 3)}
     sum = array.inject(:+)
-    sum % 11 == last_digit
+    raise ArgumentError.new("Invalid account number") if sum % 11 != last_digit
   end
 
 end
