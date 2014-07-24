@@ -5,13 +5,13 @@ Appeal.delete_all
 Gift.delete_all
 
 # Create 5 users
-acct_num_array = ["0550827", "0408646", "0634870", "0546234", "0527668"]
+acct_num_array = ["0550827", "0408646", "0550827", "0408646", "0550827"]
 5.times.map do
   User.create first_name: Faker::Name.first_name,
               last_name: Faker::Name.last_name,
               email: Faker::Internet.email,
               password: "password",
-              account_number: acct_num_array.pop!
+              account_number: acct_num_array.pop
 end
 
 # Create 10 appeals, two for each user
