@@ -5,6 +5,7 @@ gem 'pg'
 
 gem 'bcrypt-ruby', '~> 3.0.1'
 gem 'faker'
+gem 'i18n', '~> 0.6.11'
 
 # Sinatra driver
 gem 'sinatra'
@@ -23,7 +24,6 @@ gem 'debugger'
 gem 'shotgun'
 
 group :test do
-  gem 'faker'
   gem 'rspec'
   gem 'shoulda-matchers'
 end
